@@ -8,7 +8,29 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
 
-    - name: Hello world
+    - name: Hello world       # Name of step
+      run: echo 'Hello world' # Command to run
+
+      
+    - name: Hello world2
       uses: actions/hello-world-javascript-action@v1.1 # Name of the action. This uses https://github.com/actions/hello-world-javascript-action
       with:                                            # This section is needed if you need to pass arguments to the action
         who-to-greet: 'Mona the Octocat'
+
+
+    - name: build_C#_code      # Name of step
+      run: dotnet build # Command to run dotnet build
+      
+    - name: test_C#_code      # Name of step
+      run:  dotnet test # Command to test
+
+    - name: compile_C#_code      # Name of step
+      run: cd DotnetTemplate.Web; npm run build # Command to compile
+      
+
+    - name: build_ts_test      # Name of step
+      run: cd DotnetTemplate.Web;   npm t # Command to compile
+
+    - name: run_ts_test      # Name of step
+      run: cd DotnetTemplate.Web; npm run lint # Command to compile
+
