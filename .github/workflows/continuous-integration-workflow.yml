@@ -25,12 +25,18 @@ jobs:
       run:  dotnet test # Command to test
 
     - name: compile_C#_code      # Name of step
-      run: cd DotnetTemplate.Web; npm run build # Command to compile
+      run: |
+        cd DotnetTemplate.Web
+        npm run build
       
 
     - name: build_ts_test      # Name of step
-      run: cd DotnetTemplate.Web;   npm t # Command to compile
+      run: |
+        cd DotnetTemplate.Web
+        npm t
 
     - name: run_ts_test      # Name of step
-      run: cd DotnetTemplate.Web; npm run lint # Command to compile
+      run: | 
+        cd DotnetTemplate.Web 
+        npm run lint
 
