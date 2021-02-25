@@ -41,3 +41,6 @@ jobs:
         cd DotnetTemplate.Web 
         npm run lint
 
+
+    - name: notify_slack      # Name of step
+      run: curl -X POST --data-urlencode "payload={\"channel\": \"#general\", \"username\": \"webhookbot\", \"text\": \"This is posted to #general and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
